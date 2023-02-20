@@ -8,8 +8,8 @@ interface importMeta {
 
 export default defineConfig({
   plugins: [react()],
-  build: {
-    outDir: '../backend-server/public'
-  }
+  // build: {
+  //   outDir: '../backend-server/public'
+  // }
 })
 
