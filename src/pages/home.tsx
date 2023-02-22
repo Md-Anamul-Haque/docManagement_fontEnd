@@ -1,14 +1,15 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import Card from '../components/Card'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import Card from '../components/Card';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Home = () => {
     const [datas, setDatas] = useState<any>()
     const [isError, setIsError] = useState<any>(null)
     const [isLoading, setIsLoading] = useState<boolean>(true)
     useEffect(() => {
-        axios.get(import.meta.env.VITE_API_URL + '/api/links')
+        axios.get(API_URL + '/api/links')
             .then(res => {
                 if (res.data?.success) {
                     setDatas(res.data.data)

@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CUD, CUDManager } from '../CUD'
 import styled from './signIn.module.css'
+const API_URL = import.meta.env.VITE_API_URL;
+
 const SignIn = () => {
     const [user, setUser] = useState<any>()
     const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -15,7 +17,7 @@ const SignIn = () => {
     const handleSubmit = (e: any) => {
         e.preventDefault();
         CUD.post({
-            url: `${import.meta.env.VITE_API_URL}/api/sign-in/`,
+            url: `${API_URL}/api/sign-in/`,
             data: user,
         }, (res, err) => {
             if (err) {
@@ -30,7 +32,7 @@ const SignIn = () => {
     }
     // auth check
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_API_URL}/api/sign-in/`)
+        axios.get(`${API_URL}/api/sign-in/`)
             .then((res: any) => {
                 if (res.data?.success && res.data?.isLogdin == 'yes') {
                     setTimeout(() => {

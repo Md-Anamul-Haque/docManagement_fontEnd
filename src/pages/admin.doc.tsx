@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Card from "../components/Card";
 import { CUD, CUDManager } from '../CUD';
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function AdminDoc() {
   const [value, setValue] = useState<any>()
@@ -20,7 +21,7 @@ export default function AdminDoc() {
   const { doc_id } = useParams();
   // check auth
   useEffect(() => {
-    axios.get(import.meta.env.VITE_API_URL + '/api/sign-in')
+    axios.get(API_URL + '/api/sign-in')
       .then((res: any) => {
         if (!res.data?.success && res.data?.isLogdin != 'yes') {
           navigator('/sign-in')
@@ -45,7 +46,7 @@ export default function AdminDoc() {
 
   }, [])
   useEffect(() => {
-    axios.get(import.meta.env.VITE_API_URL + '/api/doc/' + doc_id)
+    axios.get(API_URL + '/api/doc/' + doc_id)
       .then(res => {
         if (res.data.success) {
           setValue(res?.data?.data?.doc)
@@ -67,7 +68,7 @@ export default function AdminDoc() {
     }
     setValueCopy(JSON.parse(JSON.stringify(value)))
     CUD.post({
-      url: import.meta.env.VITE_API_URL + '/api/doc/' + doc_id,
+      url: API_URL + '/api/doc/' + doc_id,
       data: {
         doc: value,
       }

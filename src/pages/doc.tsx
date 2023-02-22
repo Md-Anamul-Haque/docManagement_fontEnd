@@ -4,15 +4,15 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Card from '../components/Card';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Doc = () => {
   const [source, setSource] = useState<any>('')
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [isError, setIsError] = useState<any>(null)
   const { doc_id } = useParams();
-
   useEffect(() => {
-    axios.get('/api/doc/' + doc_id)
+    axios.get(API_URL + '/api/doc/' + doc_id)
       .then(res => {
         if (res.data.success) {
           setSource(res?.data?.data?.doc)
@@ -26,7 +26,7 @@ const Doc = () => {
       .finally(() => {
         setIsLoading(false)
       })
-  }, [])
+  }, [navigator])
 
   const Container = styled.div`
   width: auto;

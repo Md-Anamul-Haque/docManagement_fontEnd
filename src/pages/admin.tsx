@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import Card from "../components/Card";
 import { CUD, CUDManager } from "../CUD";
 import styled from './admin.module.css';
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 const ListOfDocLink = ({ data, datas }: { data: any, datas: any }) => {
@@ -53,7 +54,7 @@ const ListOfDocLink = ({ data, datas }: { data: any, datas: any }) => {
                         })
                     } else if (url) {
                         CUD.put({
-                            url: import.meta.env.VITE_API_URL + '/api/doc/' + data.doc_id,
+                            url: API_URL + '/api/doc/' + data.doc_id,
                             data: { doc_id: url }
                         }, (res, err) => {
                             if (res.data.success) {
@@ -94,7 +95,7 @@ const Admin = () => {
     const navigator = useNavigate()
     // check auth
     useEffect(() => {
-        axios.get(import.meta.env.VITE_API_URL + '/api/sign-in')
+        axios.get(API_URL + '/api/sign-in')
             .then((res: any) => {
                 if (!res.data?.success && res.data?.isLogdin != 'yes') {
                     navigator('/sign-in')
@@ -118,7 +119,7 @@ const Admin = () => {
         });
     }, [])
     useEffect(() => {
-        axios.get(import.meta.env.VITE_API_URL + '/api/links')
+        axios.get(API_URL + '/api/links')
             .then(res => {
                 if (res.data?.success) {
                     setDatas(res.data.data)
@@ -152,7 +153,7 @@ const Admin = () => {
                         )
                     } else if (url) {
                         CUD.post({
-                            url: import.meta.env.VITE_API_URL + '/api/doc/' + url,
+                            url: API_URL + '/api/doc/' + url,
                             data: {}
                         }, (res, err) => {
                             if (res.data.success) {
