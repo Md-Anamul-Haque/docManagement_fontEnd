@@ -39,7 +39,7 @@ const Home = () => {
                 <h1>List of Links</h1>
             </div>
             {isError && <Card>{isError}</Card>}
-            {isLoading && <Card>'Loading'</Card>}
+            {isLoading && <Card><h2>Loading</h2></Card>}
             {datas && (
                 <div className="card-body">
                     <ol className={styled.ol}>
