@@ -26,15 +26,7 @@ const Home = () => {
             })
     }, [])
     return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            placeItems: 'center',
-            textAlign: 'left',
-            height: '100vh',
-            overflowY: 'auto'
-
-        }} className={styled.card}>
+        <div className={styled.card}>
             <div className="card-header">
                 <h1>List of Links</h1>
             </div>

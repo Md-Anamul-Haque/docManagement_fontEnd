@@ -1,4 +1,11 @@
 .card {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    text-align: center;
+    height: 100vh;
+    overflow-y: auto;
+    margin: auto;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
