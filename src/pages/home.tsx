@@ -45,8 +45,6 @@ const Home = () => {
                     </ol>
                 </div>
             )}
-
-
         </div>
     )
 }

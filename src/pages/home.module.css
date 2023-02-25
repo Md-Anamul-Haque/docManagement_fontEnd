@@ -36,13 +36,13 @@
     padding: 10px;
 }
 
-ul {
+.ol {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-li {
+.li {
     margin: 10px 0;
     padding: 5px;
     border: 1px solid #ccc;
@@ -52,18 +52,18 @@ li {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-li:hover {
+.li:hover {
     transform: scale(1.05);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     background-color: var(--list-item-hover-background-color);
 }
 
-a {
+.a {
     text-decoration: none;
     color: var(--text-color);
 }
 
-a:hover {
+.a:hover {
     color: var(--link-color);
     background-color: var(--link-background-color);
     font-weight: bold;
