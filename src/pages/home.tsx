@@ -26,26 +26,31 @@ const Home = () => {
             })
     }, [])
     return (
-        <div className={styled.card}>
-            <div className="card-header">
-                <h1>List of Links</h1>
-            </div>
-            {isError && <Card>{isError}</Card>}
-            {isLoading && <Card><h2>Loading</h2></Card>}
-            {datas && (
-                <div className="card-body">
-                    <ol className={styled.ol}>
-                        {datas.map((data: any, i: number) => {
-                            return <li key={`link${i}`} className={styled.li}>
-                                <NavLink to={data.doc_id + '/'} className={styled.a}>
-                                    {data.doc_id.replace(/_/g, ' ')}
-                                </NavLink>
-                            </li>
-                        })}
-                    </ol>
+        <main style={{
+            display: 'grid',
+            justifyContent: "center"
+        }}>
+            <div className={styled.card}>
+                <div className={styled.card_header}>
+                    <h1>List of Links</h1>
                 </div>
-            )}
-        </div>
+                {isError && <Card>{isError}</Card>}
+                {isLoading && <Card><h2>Loading</h2></Card>}
+                {datas && (
+                    <div className={styled.card_body}>
+                        <ol className={styled.ol}>
+                            {datas.map((data: any, i: number) => {
+                                return <li key={`link${i}`} className={styled.li}>
+                                    <NavLink to={data.doc_id + '/'} className={styled.a}>
+                                        {data.doc_id.replace(/_/g, ' ')}
+                                    </NavLink>
+                                </li>
+                            })}
+                        </ol>
+                    </div>
+                )}
+            </div>
+        </main>
     )
 }
 

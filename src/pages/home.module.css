@@ -19,7 +19,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.card-header {
+.card_header {
     background-color: var(--card-header-background-color);
     color: var(--card-header-text-color);
     padding: 10px;
@@ -27,12 +27,9 @@
     border-radius: 5px 5px 0 0;
 }
 
-.card-header h3 {
-    margin: 0;
-    font-size: 20px;
-}
 
-.card-body {
+
+.card_body {
     padding: 10px;
 }
 
