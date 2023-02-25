@@ -34,7 +34,7 @@
 :root {
     --background-color: #f7f7f7;
     --text-color: #333;
-    --link-color: #007bff;
+    --link-color: #07fdfd;
     --list-item-background-color: #f7f7f7;
     --list-item-hover-background-color: #007bff;
     --link-background-color: #007bff;
@@ -45,10 +45,10 @@
     :root {
         --background-color: #222;
         --text-color: #f7f7f7;
-        --link-color: #007bff;
+        --link-color: #e6ebf0;
         --list-item-background-color: #333;
         --list-item-hover-background-color: #007bff;
-        --link-background-color: #007bff;
+        --link-background-color: #4084cc;
     }
 }
 
