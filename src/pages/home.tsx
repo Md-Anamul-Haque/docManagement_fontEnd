@@ -37,16 +37,18 @@ const Home = () => {
         }}>
             {isError && <Card>{isError}</Card>}
             {isLoading && <Card>'Loading'</Card>}
-
-            {datas && <ol className={styled.ol}>
-                {datas.map((data: any, i: number) => {
-                    return <li key={`link${i}`} className={styled.li}>
-                        <NavLink to={data.doc_id + '/'} className={styled.a}>
-                            {data.doc_id}
-                        </NavLink>
-                    </li>
-                })}
-            </ol>}
+            <h1>List of Links</h1>
+            {datas && (
+                <ol className={styled.ol}>
+                    {datas.map((data: any, i: number) => {
+                        return <li key={`link${i}`} className={styled.li}>
+                            <NavLink to={data.doc_id + '/'} className={styled.a}>
+                                {data.doc_id}
+                            </NavLink>
+                        </li>
+                    })}
+                </ol>
+            )}
 
 
         </div>
