@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Card from '../components/Card';
+import styled from './home.module.css';
 const API_URL = import.meta.env.VITE_API_URL;
 
 const Home = () => {
@@ -37,10 +38,10 @@ const Home = () => {
             {isError && <Card>{isError}</Card>}
             {isLoading && <Card>'Loading'</Card>}
 
-            {datas && <ol >
+            {datas && <ol className={styled.ol}>
                 {datas.map((data: any, i: number) => {
-                    return <li key={`link${i}`} >
-                        <NavLink to={data.doc_id + '/'} className="document-link">
+                    return <li key={`link${i}`} className={styled.li}>
+                        <NavLink to={data.doc_id + '/'} className={styled.a}>
                             {data.doc_id}
                         </NavLink>
                     </li>
