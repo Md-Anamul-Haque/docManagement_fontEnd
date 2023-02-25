@@ -26,10 +26,7 @@ const Home = () => {
             })
     }, [])
     return (
-        <main style={{
-            display: 'grid',
-            justifyContent: "center"
-        }}>
+        <main >
             <div className={styled.card}>
                 <div className={styled.card_header}>
                     <h1>List of Links</h1>
