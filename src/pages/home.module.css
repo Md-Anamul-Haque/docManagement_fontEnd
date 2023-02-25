@@ -28,6 +28,8 @@
 .a:hover {
     color: var(--link-color);
     background-color: var(--link-background-color);
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 /* Light mode */
@@ -45,10 +47,10 @@
     :root {
         --background-color: #222;
         --text-color: #f7f7f7;
-        --link-color: #8d1fc9;
+        --link-color: #c63559;
         --list-item-background-color: #333;
         --list-item-hover-background-color: #007bff;
-        --link-background-color: #3eca1f;
+        --link-background-color: #007bff;
     }
 }
 
