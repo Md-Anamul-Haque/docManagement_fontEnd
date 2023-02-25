@@ -43,7 +43,7 @@ const Home = () => {
                     {datas.map((data: any, i: number) => {
                         return <li key={`link${i}`} className={styled.li}>
                             <NavLink to={data.doc_id + '/'} className={styled.a}>
-                                {data.doc_id}
+                                {data.doc_id.replace(/_/g, ' ')}
                             </NavLink>
                         </li>
                     })}
