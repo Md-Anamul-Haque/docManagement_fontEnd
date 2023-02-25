@@ -35,9 +35,9 @@ const Home = () => {
             overflowY: 'auto'
 
         }}>
+            <h1>List of Links</h1>
             {isError && <Card>{isError}</Card>}
             {isLoading && <Card>'Loading'</Card>}
-            <h1>List of Links</h1>
             {datas && (
                 <ol className={styled.ol}>
                     {datas.map((data: any, i: number) => {
