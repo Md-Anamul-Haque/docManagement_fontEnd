@@ -1,4 +1,6 @@
-import { Route, Routes } from 'react-router-dom'
+import axios from 'axios'
+import { useEffect } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
 import Card from './components/Card'
 import Admin from './pages/admin'
@@ -8,6 +10,20 @@ import Home from './pages/home'
 import SignIn from './pages/signIn'
 
 function App() {
+  const token = localStorage.getItem('my-auth-token') || '';
+  // alert(token)
+  if (token) {
+    // Add a request interceptor
+    axios.interceptors.request.use(function (config) {
+      config.headers.authorization = token;
+
+      return config;
+    });
+  }
+  useEffect(() => {
+
+  }, [useNavigate()])
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />

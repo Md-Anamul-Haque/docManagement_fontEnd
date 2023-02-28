@@ -24,6 +24,7 @@ const SignIn = () => {
                 setIsError(err.message)
             }
             if (res.data?.success && res.data?.isLogdin == 'yes') {
+                localStorage.setItem('my-auth-token', res.data.token);
                 navigator('/admin/')
             } else {
                 setIsError(res.data?.message)
