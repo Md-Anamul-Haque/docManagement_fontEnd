@@ -52,6 +52,16 @@ const ListOfDocLink = ({ data, datas }: { data: any, datas: any }) => {
                                 editPageName()
                             }
                         })
+                    } else if (url.indexOf('/') != -1) {
+                        Swal.fire({
+                            title: `'/' is not a valid url you past a valid string url`,
+                            showCancelButton: true,
+                            confirmButtonText: 'Try other name',
+
+                            preConfirm: async () => {
+                                editPageName()
+                            }
+                        })
                     } else if (url) {
                         CUD.put({
                             url: API_URL + '/api/doc/' + data.doc_id,
@@ -61,8 +71,18 @@ const ListOfDocLink = ({ data, datas }: { data: any, datas: any }) => {
                                 Swal.fire({
                                     title: `Now write something on this page '${res.data?.data?.doc_id}'?`,
                                 }).then(() => {
-                                    navigator(res.data?.data?.doc_id + '/')
+                                    navigator(res.data?.data?.doc_id.replace(/\ /g, '_') + '/')
                                 })
+                            }
+                        })
+                    } else {
+                        Swal.fire({
+                            title: `not a valie url name of '${url}'?`,
+                            showCancelButton: true,
+                            confirmButtonText: 'Try other name',
+
+                            preConfirm: async () => {
+                                editPageName()
                             }
                         })
                     }
@@ -80,8 +100,8 @@ const ListOfDocLink = ({ data, datas }: { data: any, datas: any }) => {
     return (<li className={styled.li}>
 
         <div >
-            <NavLink className={styled.navLink} to={data.doc_id + '/'}>
-                {data.doc_id}
+            <NavLink className={styled.navLink} to={data.doc_id.replace(/\ /g, '_') + '/'}>
+                {data.doc_id.replace(/_/g, ' ')}
             </NavLink>
         </div>
         <button onClick={editPageName}><FaRegEdit />edit</button>
@@ -160,7 +180,7 @@ const Admin = () => {
                                 Swal.fire({
                                     title: `Now write something on this page '${res.data?.data?.doc_id}'?`,
                                 }).then(() => {
-                                    navigator(res.data?.data?.doc_id + '/')
+                                    navigator(res.data?.data?.doc_id.replace(/\ /g, '_') + '/')
                                 })
                             }
                         })
