@@ -124,10 +124,6 @@ const Admin = () => {
             .catch(err => {
                 setIsError(err.message)
             })
-            .finally(() => {
-                setIsLoading(false)
-            });
-
 
         axios.interceptors.response.use(function (response) {
             if (response.data?.success == false && response.data?.isLogdin == 'no') {

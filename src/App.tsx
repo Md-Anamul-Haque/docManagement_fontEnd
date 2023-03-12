@@ -16,7 +16,6 @@ function App() {
     // Add a request interceptor
     axios.interceptors.request.use(function (config) {
       config.headers.authorization = token;
-
       return config;
     });
   }
