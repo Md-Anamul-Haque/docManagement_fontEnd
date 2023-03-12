@@ -1,17 +1,20 @@
-import { useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const signOut = () => {
+const SignOut = () => {
     const navigator = useNavigate()
-    useEffect(() => {
+    const [click, setClick] = useState<boolean>(false)
+    const sighOut = () => {
+        setClick(true)
         window.localStorage.clear
         navigator('/')
-    }, [])
+        setClick(false)
+    }
     return (
         <div className='sign-out-container'>
-            <h1>Sign Out...</h1>
+            <h1 onClick={sighOut}>Sign Out{click && '...'}</h1>
         </div>
     )
 }
 
-export default signOut
+export default SignOut

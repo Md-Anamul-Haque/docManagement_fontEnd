@@ -36,6 +36,10 @@
   place-items: center;
 }
 
+.sign-out-container h1 {
+  border: 2px solid purple;
+}
+
 /* 
 
 .document-link {

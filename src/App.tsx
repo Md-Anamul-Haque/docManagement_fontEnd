@@ -8,6 +8,7 @@ import AdminDoc from './pages/admin.doc'
 import Doc from './pages/doc'
 import Home from './pages/home'
 import SignIn from './pages/signIn'
+import SignOut from './pages/signOut'
 
 function App() {
   const token = localStorage.getItem('my-auth-token') || '';
@@ -29,6 +30,7 @@ function App() {
       <Route path="/admin" element={<Admin />} />
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/:doc_id" element={<Doc />} />
+      <Route path="/admin/sign-out" element={<SignOut />} />
       <Route path="/admin/:doc_id" element={<AdminDoc />} />
       <Route path="*" element={<Card>NOt Found - 404</Card>} />
     </Routes>
