@@ -30,9 +30,6 @@ export default function AdminDoc() {
       .catch(err => {
         setIsError(err.message)
       })
-      .finally(() => {
-        setIsLoading(false)
-      });
 
 
     axios.interceptors.response.use(function (response) {
