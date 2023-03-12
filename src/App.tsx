@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
 import Card from './components/Card'
 import Admin from './pages/admin'
@@ -14,11 +15,14 @@ function App() {
   if (token) {
     // Add a request interceptor
     axios.interceptors.request.use(function (config) {
-      // config.headers.authorization = token;
-      config.withCredentials = true
+      config.headers.authorization = token;
+
       return config;
     });
   }
+  useEffect(() => {
+
+  }, [useNavigate()])
 
   return (
     <Routes>
