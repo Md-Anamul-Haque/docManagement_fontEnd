@@ -196,6 +196,11 @@ const Admin = () => {
             {/* <swal-image src="..." width="..." height="..." alt="..." /> */}
             {isError && <Card>{isError}</Card>}
             {isLoading && <Card>'Loading'</Card>}
+            <div className="sign-out-nav">
+                <NavLink to={"sign-out/"}>
+                    sign-out
+                </NavLink>
+            </div>
             {datas && (
                 <ol className={styled.ol}>
                     {datas.map((data: any, i: number) => {

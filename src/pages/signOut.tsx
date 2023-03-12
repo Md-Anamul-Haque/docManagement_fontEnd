@@ -6,7 +6,7 @@ const SignOut = () => {
     const [click, setClick] = useState<boolean>(false)
     const sighOut = () => {
         setClick(true)
-        window.localStorage.clear
+        window.localStorage.removeItem('my-auth-token')
         navigator('/')
         setClick(false)
     }

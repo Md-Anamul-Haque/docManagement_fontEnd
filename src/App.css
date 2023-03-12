@@ -38,6 +38,41 @@
 
 .sign-out-container h1 {
   border: 2px solid purple;
+  cursor: pointer;
+  margin: 30px;
+  position: relative;
+  padding: 11px;
+  border-radius: 10px;
+}
+
+.sign-out-container h1::after {
+  content: "click now";
+  position: absolute;
+  bottom: 0;
+  transform: translate(-100%, 100%);
+  font-size: 1rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: lighter;
+  width: 100%;
+  text-align: center;
+}
+
+.sign-out-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 1px solid;
+  background-color: cadetblue;
+  padding: 8px;
+  display: grid;
+  place-items: center;
+}
+
+.sign-out-nav * {
+  padding: 8px;
+  box-shadow: 0 0 5px 5px palegoldenrod;
+  border-radius: 10px;
+  color: chartreuse;
 }
 
 /* 
